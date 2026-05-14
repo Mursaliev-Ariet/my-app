@@ -2,8 +2,8 @@ from django.db import models
 
 class Student(models.Model):
     last_name = models.CharField(max_length=100, verbose_name="имя")
-    first_name = models.CharField(max_length=100, verbose_name="пароль")
-    age = models.IntegerField(max_length=100, verbose_name="возраст")
+    first_name = models.CharField(max_length=100, verbose_name="фамилия")
+    age = models.IntegerField(verbose_name="возраст")
 
     def __str__(self):
         return self.last_name
@@ -14,8 +14,8 @@ class Student(models.Model):
 class Teacher(models.Model):
     username = models.CharField(max_length=100, verbose_name="имя")
     password = models.CharField(max_length=100, verbose_name="пароль")
-    money = models.IntegerField(max_length=100, verbose_name="заработок")
-    age = models.IntegerField(max_length=100, verbose_name="возраст")
+    money = models.IntegerField(verbose_name="заработок")
+    age = models.IntegerField(verbose_name="возраст")
 
     def __str__(self):
         return self.username
@@ -41,11 +41,6 @@ class Subject(models.Model):
     class Meta:
         verbose_name = "предмет"
         verbose_name_plural = "предмет"
-
-def __str__(self):
-    return self.username
-class Meta:
-    db_table = 'Student'
 
 
 class Homework(models.Model):
