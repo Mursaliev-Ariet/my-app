@@ -4,12 +4,14 @@ class Student(models.Model):
     last_name = models.CharField(max_length=100, verbose_name="имя")
     first_name = models.CharField(max_length=100, verbose_name="фамилия")
     age = models.IntegerField(verbose_name="возраст")
+    photo = models.ImageField(upload_to='students/', verbose_name="фото")
 
     def __str__(self):
         return self.last_name
     class Meta:
         verbose_name = "студент"
         verbose_name_plural = "студент"
+
 
 class Teacher(models.Model):
     username = models.CharField(max_length=100, verbose_name="имя")
@@ -35,6 +37,7 @@ class Group(models.Model):
 
 class Subject(models.Model):
     name = models.CharField(max_length=100, verbose_name="предмет")
+    photo = models.ImageField(upload_to='subjects/', verbose_name="фото")
 
     def __str__(self):
         return self.name
@@ -58,3 +61,16 @@ class Homework(models.Model):
     class Meta:
         verbose_name = "домашнее задание"
         verbose_name_plural = "домашнее задание"
+
+class Client(models.Model):
+    name = models.CharField(max_length=100, verbose_name='имя')
+    surname = models.CharField(max_length=100, verbose_name='фамилия')
+    number = models.IntegerField(verbose_name='номер телефона')
+    car = models.ImageField(upload_to='clients/', verbose_name='фото машины')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Клиенты"
+        verbose_name_plural = "Клиенты"

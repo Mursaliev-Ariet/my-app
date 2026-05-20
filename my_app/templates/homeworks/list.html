@@ -1,0 +1,5 @@
+<h1>Список домашних заданий</h1>
+
+{% for homework in homeworks_list %}
+    <p>{{ homework.subject}} {{homework.group}} {{homework.teacher}} {{homework.title}} {{homework.description}} {{homework.deadline}} {{homework.created_at }}</p>
+{% endfor %}

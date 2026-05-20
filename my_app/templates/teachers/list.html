@@ -1,0 +1,5 @@
+<h1>Список учителей</h1>
+
+{% for teacher in teachers_list %}
+    <p>{{ teacher.username}} {{teacher.money}} {{teacher.age}}</p>
+{% endfor %}

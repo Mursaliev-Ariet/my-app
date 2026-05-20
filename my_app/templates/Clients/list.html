@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Клиенты</title>
+
+<link rel="stylesheet" href="{% static 'css/Client.css' %}">
+
+</head>
+
+<body>
+<header>
+
+    <form method="get">
+        <input type="text" name="search" placeholder="Поиск по имени">
+        <button type="submit">Поиск</button>
+    </form>
+    <h1>Список клиентов</h1>
+</header>
+{% for client in clients_list %}
+    <div class="card">
+        <div class="container">
+            <div class="minibox">
+                <p>фамилия: {{ client.surname }}</p>
+                <p>имя: {{ client.name }}</p>
+                <p>номер: {{ client.number }}</p>
+            </div>
+            <img src="{{ client.car.url }}">
+        </div>
+    </div>
+{% endfor %}
+</body>
+</html>
